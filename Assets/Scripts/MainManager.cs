@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
+using System.IO;
 
 public class MainManager : MonoBehaviour
 {
@@ -11,12 +13,21 @@ public class MainManager : MonoBehaviour
     public Rigidbody Ball;
 
     public Text ScoreText;
+    public Text HighScoreText;
+    public static string highScoreName;
+    
     public GameObject GameOverText;
     
     private bool m_Started = false;
     private int m_Points;
+    public static int highScorePoints;
+    
     
     private bool m_GameOver = false;
+
+    public TextMeshProUGUI displayPlayerName;
+
+    
 
     
     // Start is called before the first frame update
@@ -55,6 +66,7 @@ public class MainManager : MonoBehaviour
         }
         else if (m_GameOver)
         {
+
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -66,11 +78,36 @@ public class MainManager : MonoBehaviour
     {
         m_Points += point;
         ScoreText.text = $"Score : {m_Points}";
+
+        if (m_Points > highScorePoints)
+        {
+            PlayerPrefs.SetInt("highscore", m_Points);
+            PlayerPrefs.SetString("highscoreName", MainMenu.menu.playerName);
+           
+        }
     }
 
     public void GameOver()
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+
+        highScorePoints = PlayerPrefs.GetInt("highscore");
+        highScoreName = PlayerPrefs.GetString("highscoreName");
+
+        HighScoreText.text = "Best Score: " + highScoreName + ": " + highScorePoints;
+    }
+    
+    public void Awake()
+    { 
+        if (MainMenu.menu != null)
+        {
+            displayPlayerName.text = MainMenu.menu.playerName;
+        }
+
+        highScorePoints = PlayerPrefs.GetInt("highscore");
+        highScoreName = PlayerPrefs.GetString("highscoreName");
+
+        HighScoreText.text = "Best Score: " + highScoreName + ": " + highScorePoints;
     }
 }
