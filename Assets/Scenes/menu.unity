@@ -325,8 +325,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 414696237}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 1237451560}
+        m_TargetAssemblyTypeName: MenuUIHandler, Assembly-CSharp
         m_MethodName: HighScoreScreen
         m_Mode: 1
         m_Arguments:
@@ -728,8 +728,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 414696237}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 1237451560}
+        m_TargetAssemblyTypeName: MenuUIHandler, Assembly-CSharp
         m_MethodName: StartNew
         m_Mode: 1
         m_Arguments:
@@ -740,8 +740,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 414696237}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 1237451560}
+        m_TargetAssemblyTypeName: MenuUIHandler, Assembly-CSharp
         m_MethodName: SetPlayerName
         m_Mode: 1
         m_Arguments:
@@ -1395,6 +1395,7 @@ GameObject:
   - component: {fileID: 1237451558}
   - component: {fileID: 1237451557}
   - component: {fileID: 1237451556}
+  - component: {fileID: 1237451560}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1487,6 +1488,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1237451560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237451555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0bfcc4d2b87bb47b4fabe26a6fe93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1822114897
 GameObject:
   m_ObjectHideFlags: 0

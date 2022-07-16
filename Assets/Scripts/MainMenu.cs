@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     public static MainMenu menu;
 
-    public TMP_InputField inputField;
+    
     public string playerName;
 
 

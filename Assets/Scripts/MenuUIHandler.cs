@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MenuUIHandler : MonoBehaviour
 {
+    public TMP_InputField inputField;
     public void StartNew()
     {
         SceneManager.LoadScene(1);
@@ -17,6 +19,6 @@ public class MenuUIHandler : MonoBehaviour
 
     public void SetPlayerName()
     {
-        MainMenu.menu.playerName = MainMenu.menu.inputField.text;
+        MainMenu.menu.playerName = inputField.text;
     }
 }
